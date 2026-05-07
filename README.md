@@ -246,7 +246,7 @@ task_id = analyzer.submit_task(task_type="time_series_forecast", data_path="larg
 
 - 项目主页：[GitHub](https://github.com/your-org/industrial-data-analyst1)
 - 问题反馈：[Issues](https://github.com/your-org/industrial-data-analyst1/issues)
-- 邮箱：support@example.com
+- 邮箱：dunan387@gmail
 
 ## 致谢
 
