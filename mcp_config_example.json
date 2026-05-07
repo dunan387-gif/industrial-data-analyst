@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "industrial-data-analyst": {
+      "command": "python",
+      "args": ["d:/aaaend/industrial-data-analyst1/mcp_server.py"],
+      "env": {
+        "INDUSTRIAL_SKILL_MODEL": "claude"
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "standard_id": "GB/T 15166",
+  "standard_name": "热轧钢板和钢带的表面质量",
+  "applicable_to": ["热轧钢板", "热轧钢带", "冷轧钢板"],
+  "defect_categories": [
+    {
+      "category": "划痕 (Scratches)",
+      "english": "Scratches",
+      "description": "表面线状凹痕，通常由机械摩擦造成",
+      "severity_levels": [
+        {"level": "轻微", "depth_mm": "< 0.1", "action": "外观处理"},
+        {"level": "中等", "depth_mm": "0.1-0.3", "action": "降级使用或修磨"},
+        {"level": "严重", "depth_mm": "> 0.3", "action": "判废或返修"}
+      ]
+    },
+    {
+      "category": "夹杂 (Inclusions)",
+      "english": "Inclusions",
+      "description": "钢中的非金属夹杂物显露至表面",
+      "severity_levels": [
+        {"level": "轻微", "size_mm": "< 1", "action": "可接受"},
+        {"level": "中等", "size_mm": "1-3", "action": "检验后定级"},
+        {"level": "严重", "size_mm": "> 3", "action": "判废"}
+      ]
+    },
+    {
+      "category": "斑块 (Patches)",
+      "english": "Patches",
+      "description": "局部色泽或纹理异常",
+      "severity_levels": [
+        {"level": "轻微", "area_pct": "< 1%", "action": "外观处理"},
+        {"level": "中等", "area_pct": "1-5%", "action": "降级"},
+        {"level": "严重", "area_pct": "> 5%", "action": "判废"}
+      ]
+    },
+    {
+      "category": "麻点 (Pitted Surface)",
+      "english": "Pitted Surface",
+      "description": "表面密集小坑，由腐蚀或氧化造成",
+      "severity_levels": [
+        {"level": "轻微", "density": "稀疏", "action": "可接受"},
+        {"level": "中等", "density": "中密", "action": "降级使用"},
+        {"level": "严重", "density": "密集", "action": "判废或返修"}
+      ]
+    },
+    {
+      "category": "压入氧化铁皮 (Rolled-in Scale)",
+      "english": "Rolled-in Scale",
+      "description": "氧化皮被轧入钢材表面",
+      "severity_levels": [
+        {"level": "轻微", "depth_mm": "< 0.05", "action": "可接受"},
+        {"level": "中等", "depth_mm": "0.05-0.2", "action": "酸洗去除"},
+        {"level": "严重", "depth_mm": "> 0.2", "action": "返修或判废"}
+      ]
+    },
+    {
+      "category": "裂纹 (Crazing)",
+      "english": "Crazing",
+      "description": "表面网状或线状裂纹",
+      "severity_levels": [
+        {"level": "轻微", "length_mm": "< 5", "action": "评估后定级"},
+        {"level": "中等", "length_mm": "5-20", "action": "返修"},
+        {"level": "严重", "length_mm": "> 20", "action": "判废"}
+      ]
+    }
+  ],
+  "neu_dataset_mapping": {
+    "description": "NEU-DET 数据集 6 类缺陷对应国标分类",
+    "Cr": "Crazing 裂纹",
+    "In": "Inclusions 夹杂",
+    "Pa": "Patches 斑块",
+    "PS": "Pitted Surface 麻点",
+    "RS": "Rolled-in Scale 压入氧化铁皮",
+    "Sc": "Scratches 划痕"
+  },
+  "reference_phrasing": "依据 GB/T 15166 钢材表面质量国家标准",
+  "source": "国家市场监督管理总局"
+}

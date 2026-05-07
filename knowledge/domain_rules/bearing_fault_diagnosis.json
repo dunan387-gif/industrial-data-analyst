@@ -1,0 +1,81 @@
+{
+  "rule_set": "滚动轴承故障诊断规则",
+  "based_on": ["GB/T 32877", "ISO 15243", "工程经验"],
+  "fault_modes": [
+    {
+      "fault_type": "外圈故障 (BPFO - Ball Pass Frequency Outer)",
+      "characteristic_frequency_formula": "BPFO = (n/2) × fr × (1 - d/D × cos(α))",
+      "frequency_features": [
+        "频谱中出现 BPFO 频率及其谐波",
+        "通常无明显边带"
+      ],
+      "time_domain_features": [
+        "周期性冲击信号",
+        "峰值因子 > 4",
+        "峭度值 > 4"
+      ],
+      "likely_causes": ["润滑不良", "外圈剥落", "外圈磨损"],
+      "severity_progression": "早期 → 中期 → 晚期：频率峰值逐渐增大，边带可能出现"
+    },
+    {
+      "fault_type": "内圈故障 (BPFI - Ball Pass Frequency Inner)",
+      "characteristic_frequency_formula": "BPFI = (n/2) × fr × (1 + d/D × cos(α))",
+      "frequency_features": [
+        "频谱出现 BPFI 频率及其谐波",
+        "周围伴随 ±fr（转频）的边带（旋转调制）"
+      ],
+      "time_domain_features": [
+        "幅值随轴转动周期性变化",
+        "峭度值 > 5（更尖锐）"
+      ],
+      "likely_causes": ["内圈剥落", "内圈磨损", "装配过盈不当"]
+    },
+    {
+      "fault_type": "滚动体故障 (BSF - Ball Spin Frequency)",
+      "characteristic_frequency_formula": "BSF = (D/(2d)) × fr × (1 - (d/D × cos(α))²)",
+      "frequency_features": [
+        "频谱出现 2×BSF（每滚动一周接触内外圈各一次）",
+        "伴随保持架频率 (FTF) 的边带"
+      ],
+      "likely_causes": ["滚动体表面剥落", "滚动体破裂"]
+    },
+    {
+      "fault_type": "保持架故障 (FTF - Fundamental Train Frequency)",
+      "characteristic_frequency_formula": "FTF = (1/2) × fr × (1 - d/D × cos(α))",
+      "frequency_features": [
+        "频谱出现 FTF（通常 < 0.5×fr，频率低）"
+      ],
+      "likely_causes": ["保持架磨损", "保持架断裂", "异物侵入"]
+    }
+  ],
+  "diagnostic_indicators": {
+    "RMS振动有效值": {
+      "trend": "随故障发展单调上升",
+      "use": "故障严重度评估"
+    },
+    "峰值因子 (Crest Factor)": {
+      "definition": "峰值 / RMS",
+      "healthy": "< 3",
+      "warning": "3-5",
+      "fault": "> 5",
+      "use": "早期故障敏感"
+    },
+    "峭度 (Kurtosis)": {
+      "definition": "信号四阶中心矩，健康轴承约 3",
+      "healthy": "约 3 (高斯分布)",
+      "warning": "3-5",
+      "fault": "> 5",
+      "use": "冲击成分检测"
+    },
+    "包络谱": {
+      "use": "提取调制信号，定位故障频率"
+    }
+  },
+  "severity_grading": [
+    {"stage": "I (健康)", "RMS_增长": "0%", "建议": "正常运行"},
+    {"stage": "II (早期)", "RMS_增长": "+50%", "建议": "加密监测，每周检查"},
+    {"stage": "III (中期)", "RMS_增长": "+200%", "建议": "30-60 天内更换"},
+    {"stage": "IV (晚期)", "RMS_增长": "+1000%", "建议": "立即停机更换"}
+  ],
+  "reference_phrasing": "依据 GB/T 32877 滚动轴承故障诊断方法 + ISO 15243 失效模式分类"
+}

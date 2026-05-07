@@ -1,0 +1,72 @@
+{
+  "standard_id": "GB/T 2589",
+  "standard_name": "综合能耗计算通则",
+  "applicable_to": ["工业企业能耗核算", "能源审计", "节能诊断"],
+  "key_metrics": [
+    {
+      "metric": "单位产品综合能耗",
+      "unit": "kgce/t (千克标准煤/吨)",
+      "description": "生产单位合格产品所消耗的各种能源折标煤总和",
+      "diagnostic_thresholds": {
+        "world_advanced": "< 行业先进水平 80%",
+        "national_advanced": "< 行业平均水平 90%",
+        "average": "≈ 行业平均水平",
+        "lagging": "> 行业平均水平 110%",
+        "elimination": "> 行业平均水平 130% (淘汰类)"
+      }
+    },
+    {
+      "metric": "能耗强度同比变化",
+      "unit": "%",
+      "diagnostic_thresholds": {
+        "improving": "≤ -3% (持续改善)",
+        "stable": "-3% ~ +3% (稳定)",
+        "warning": "+3% ~ +10% (需关注)",
+        "abnormal": "> +10% (异常，需排查)"
+      }
+    },
+    {
+      "metric": "空载能耗占比",
+      "unit": "%",
+      "description": "设备非生产时段能耗占总能耗的比例",
+      "diagnostic_thresholds": {
+        "excellent": "< 5%",
+        "good": "5-10%",
+        "warning": "10-20%",
+        "abnormal": "> 20% (建议优化设备启停管理)"
+      }
+    },
+    {
+      "metric": "夜班能耗占比",
+      "unit": "%",
+      "diagnostic_thresholds": {
+        "normal": "若夜班产量占比 N%，能耗占比应在 N±5% 内",
+        "abnormal": "能耗占比显著高于产量占比 → 设备空转或低效"
+      }
+    }
+  ],
+  "common_root_causes": [
+    {
+      "phenomenon": "周末/节假日能耗未明显下降",
+      "likely_causes": ["设备未及时停机", "辅助系统空载运行", "保温/制冷系统持续工作"],
+      "estimated_savings": "5-15% 总能耗"
+    },
+    {
+      "phenomenon": "夏季空调季能耗激增 > 30%",
+      "likely_causes": ["空调系统老化效率低", "围护结构保温差", "新风量过大"],
+      "estimated_savings": "10-25% 空调能耗"
+    },
+    {
+      "phenomenon": "电机长期低负荷运行（< 60% 额定）",
+      "likely_causes": ["电机选型过大", "工艺需求变化", "缺少变频改造"],
+      "estimated_savings": "15-30% 电机能耗"
+    },
+    {
+      "phenomenon": "压缩空气泄漏",
+      "likely_causes": ["管路老化", "阀门密封失效", "用气点未关闭"],
+      "estimated_savings": "20-40% 压缩空气能耗"
+    }
+  ],
+  "reference_phrasing": "依据 GB/T 2589 综合能耗计算通则",
+  "source": "国家市场监督管理总局"
+}

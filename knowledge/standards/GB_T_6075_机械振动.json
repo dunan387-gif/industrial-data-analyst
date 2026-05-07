@@ -1,0 +1,78 @@
+{
+  "standard_id": "GB/T 6075",
+  "standard_name": "机械振动 在非旋转部件上测量评价机器的振动",
+  "equivalent_iso": "ISO 10816",
+  "applicable_to": ["旋转机械", "电机", "泵", "风机", "压缩机", "齿轮箱"],
+  "metric": "振动速度有效值 RMS",
+  "unit": "mm/s",
+  "evaluation_zones": [
+    {
+      "zone": "A",
+      "name": "良好（新机器）",
+      "description": "新交付机器的典型振动等级",
+      "color": "green",
+      "action": "正常运行，无需处理"
+    },
+    {
+      "zone": "B",
+      "name": "可接受（长期运行）",
+      "description": "适合长期连续运行的机器",
+      "color": "yellow_green",
+      "action": "正常监控，记录趋势"
+    },
+    {
+      "zone": "C",
+      "name": "警告（不宜长期运行）",
+      "description": "通常认为不适合长期运行，但短期可接受",
+      "color": "yellow",
+      "action": "加强监测，安排检修计划，30天内停机维护"
+    },
+    {
+      "zone": "D",
+      "name": "危险（应立即停机）",
+      "description": "振动值足以引起机器损坏",
+      "color": "red",
+      "action": "立即停机，进行故障排查"
+    }
+  ],
+  "thresholds_by_class": [
+    {
+      "machine_class": "I",
+      "description": "小型机械（功率 ≤ 15 kW）",
+      "examples": ["小型电机", "小型泵"],
+      "A_max": 0.71,
+      "B_max": 1.8,
+      "C_max": 4.5,
+      "D_min": 4.5
+    },
+    {
+      "machine_class": "II",
+      "description": "中型机械（功率 15-75 kW）",
+      "examples": ["中型电机", "工艺泵"],
+      "A_max": 1.12,
+      "B_max": 2.8,
+      "C_max": 7.1,
+      "D_min": 7.1
+    },
+    {
+      "machine_class": "III",
+      "description": "大型机械（功率 > 75 kW），刚性基础",
+      "examples": ["大型电机", "压缩机"],
+      "A_max": 1.8,
+      "B_max": 4.5,
+      "C_max": 11.2,
+      "D_min": 11.2
+    },
+    {
+      "machine_class": "IV",
+      "description": "大型机械，柔性基础",
+      "examples": ["大型透平", "重型设备"],
+      "A_max": 2.8,
+      "B_max": 7.1,
+      "C_max": 18.0,
+      "D_min": 18.0
+    }
+  ],
+  "reference_phrasing": "根据 GB/T 6075（等同于 ISO 10816）的振动评价标准",
+  "source": "国家市场监督管理总局 / 国家标准化管理委员会"
+}
